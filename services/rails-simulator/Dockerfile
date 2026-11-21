@@ -21,7 +21,7 @@ RUN java -Djarmode=tools -jar build/libs/finaxis-rails-simulator.jar \
     extract --layers --destination extracted
 
 # Distroless, `nonroot` variant: the Java runtime only, running as user 65532.
-FROM gcr.io/distroless/java25-debian13:nonroot@sha256:1c4ced761d17961c900cba60c33c8c3c46edbdadaa9d5ef9806eb5a6824fd406
+FROM gcr.io/distroless/java25-debian13:nonroot@sha256:b0a31b9a063a6fb8132ec93da4cfd8515421ad35e40d7ac79fbebbaaae98227f
 WORKDIR /app
 COPY --from=build /workspace/extracted/dependencies/ ./
 COPY --from=build /workspace/extracted/spring-boot-loader/ ./
