@@ -27,7 +27,7 @@ RUN java -Djarmode=tools -jar build/libs/finaxis-core.jar \
 # Distroless: the Java runtime and nothing else, no shell and no package
 # manager, so an attacker who gets in finds no tools. The `nonroot` variant
 # runs as user 65532, never as root.
-FROM gcr.io/distroless/java25-debian13:nonroot@sha256:1c4ced761d17961c900cba60c33c8c3c46edbdadaa9d5ef9806eb5a6824fd406
+FROM gcr.io/distroless/java25-debian13:nonroot@sha256:b0a31b9a063a6fb8132ec93da4cfd8515421ad35e40d7ac79fbebbaaae98227f
 WORKDIR /app
 COPY --from=build /workspace/extracted/dependencies/ ./
 COPY --from=build /workspace/extracted/spring-boot-loader/ ./
